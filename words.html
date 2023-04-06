@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>単語一覧</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>単語一覧</h1>
+        <table id="word-table">
+            <thead>
+                <tr>
+                    <th>英単語</th>
+                    <th>日本語</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        async function fetchWords() {
+            const response = await fetch('/get_words');
+            const data = await response.json();
+            const words = data.words;
+            const tableBody = document.querySelector('#word-table tbody');
+
+            words.forEach(word => {
+                const row = document.createElement('tr');
+                const englishCell = document.createElement('td');
+                const japaneseCell = document.createElement('td');
+
+                englishCell.textContent = word.english;
+                japaneseCell.textContent = word.japanese;
+
+                row.appendChild(englishCell);
+                row.appendChild(japaneseCell);
+                tableBody.appendChild(row);
+            });
+        }
+
+        fetchWords();
+    </script>
+</body>
+</html>
