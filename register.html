@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ user.username }}のプロフィール</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<nav>
+    <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="register.html">ユーザー登録</a></li>
+        <li><a href="profile.html">プロフィール</a></li>
+        <li><a href="words.html">単語一覧</a></li>
+        <li><a href="test.html">単語テスト</a></li>
+    </ul>
+</nav>
+
+<body>
+    <h1>ユーザー登録</h1>
+    <form action="/register" method="post">
+        <label for="username">ユーザー名:</label>
+        <input type="text" name="username" id="username" required>
+        <br>
+        <label for="password">パスワード:</label>
+        <input type="password" name="password" id="password" required>
+        <br>
+        <input type="submit" value="登録">
+    </form>
+</body>
+</html>

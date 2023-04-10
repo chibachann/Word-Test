@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>単語テストアプリ</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="main.js"></script>
+</head>
+<nav>
+    <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="register.html">ユーザー登録</a></li>
+        <li><a href="profile.html">プロフィール</a></li>
+        <li><a href="words.html">単語一覧</a></li>
+        <li><a href="test.html">単語テスト</a></li>
+    </ul>
+</nav>
+<body>
+    <div class="container">
+        <h1>単語テストアプリ</h1>
+        <form id="word-form" onsubmit="addWord(); return false;">
+            <input type="text" id="english-word" placeholder="英単語を入力（スペースで区切る）" required>
+            <button type="submit">単語を追加</button>
+        </form>
+        <div id="message"></div>
+        <a href="/words" class="word-list-link">単語一覧を表示</a>
+        <a href="/test.html" class="word-list-link">単語テスト</a>
+    </div>
+</body>
+</html>
